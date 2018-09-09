@@ -32,6 +32,22 @@ class Node(var data: Int) {
 class LinkedList(val head: Node) : Iterable<Node> {
     override fun iterator(): Iterator<Node> = LinkedListIterator(this)
 
+    fun getTail(): Node? {
+        var tail = head
+        while (tail.next != null) {
+            tail = tail.next!!
+        }
+
+        return tail
+    }
+
+    fun asArray(): IntArray =
+            this.asSequence()
+                    .map { e -> e.data }
+                    .toList()
+                    .toTypedArray()
+                    .toIntArray()
+
     companion object {
         fun fromArray(arr: IntArray): LinkedList {
             val head = Node.fromArray(arr)

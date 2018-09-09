@@ -9,13 +9,7 @@ fun test(input: IntArray, expected: IntArray): Boolean {
     val linkedList = LinkedList.fromArray(input)
     removeDuplicates(linkedList)
 
-    val output = linkedList
-            .asSequence()
-            .map { e -> e.data }
-            .toList()
-            .toTypedArray()
-            .toIntArray()
-
+    val output = linkedList.asArray()
     return expected.contentEquals(output)
 }
 
