@@ -32,14 +32,8 @@ class Node(var data: Int) {
 class LinkedList(val head: Node) : Iterable<Node> {
     override fun iterator(): Iterator<Node> = LinkedListIterator(this)
 
-    fun getTail(): Node? {
-        var tail = head
-        while (tail.next != null) {
-            tail = tail.next!!
-        }
-
-        return tail
-    }
+    fun getTailNode(): Node? =
+            this.last()
 
     fun asArray(): IntArray =
             this.asSequence()

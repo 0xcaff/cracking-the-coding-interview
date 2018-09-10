@@ -36,7 +36,7 @@ fun check(pivot: Int, list: IntArray): Boolean {
 }
 
 fun partition(pivot: Int, list: LinkedList) {
-    val originalTail = list.getTail()!!
+    val originalTail = list.getTailNode()!!
     var tail = originalTail
 
     var lastNode: Node? = null
