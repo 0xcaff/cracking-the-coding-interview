@@ -6,6 +6,17 @@ import Chapter2_1.Node
 fun main(args: Array<String>) {
     testInnerLoop()
     testNonInnerLoop()
+    testLongInnerLoop()
+}
+
+fun testLongInnerLoop() {
+    val ints = intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+    val list = LinkedList.fromArray(ints)
+    val innerNode = list.asSequence().drop(3).first()
+
+    list.getTailNode()!!.next = innerNode
+
+    require(detectLoop(list) == innerNode)
 }
 
 fun testNonInnerLoop() {
@@ -26,12 +37,22 @@ fun testInnerLoop() {
 }
 
 fun detectLoop(list: LinkedList): Node? {
-    val zippedSequence =
-            list.asSequence() zip list.asSequence().filterIndexed { index, _ -> index % 2 == 0 }
+    var slow: Node? = list.head
+    var fast: Node? = list.head
 
-    for ((slowNode, fastNode) in zippedSequence.drop(1)) {
-        if (slowNode == fastNode) {
-            return slowNode
+    while (fast?.next != null) {
+        slow = slow!!.next
+        fast = fast.next!!.next
+
+        if (slow == fast) {
+            slow = list.head
+
+            while (slow != fast) {
+                slow = slow!!.next
+                fast = fast!!.next
+            }
+
+            return fast
         }
     }
 
