@@ -1,14 +1,8 @@
 package Chapter4_2
 
-data class BSTNode(
-        val value: Int,
-        var left: BSTNode? = null,
-        var right: BSTNode? = null
-)
-
-fun makeMinimalBinarySearchTree(values: IntArray): BSTNode? {
+fun makeMinimalBinarySearchTree(values: IntArray): BinaryTreeNode? {
     if (values.size == 1) {
-        return BSTNode(values[0])
+        return BinaryTreeNode(values[0])
     }
 
     if (values.isEmpty()) {
@@ -24,7 +18,7 @@ fun makeMinimalBinarySearchTree(values: IntArray): BSTNode? {
     val rhsArray = values.slice(middleIdx + 1 until values.size).toIntArray()
     val rhs = makeMinimalBinarySearchTree(rhsArray)
 
-    return BSTNode(
+    return BinaryTreeNode(
             value = middle,
             left = lhs,
             right = rhs
