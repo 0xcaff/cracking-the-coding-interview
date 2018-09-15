@@ -4,7 +4,7 @@ import java.util.*
 
 sealed class Animal
 data class Dog(val name: String) : Animal()
-data class Cat(val name: String): Animal()
+data class Cat(val name: String) : Animal()
 
 class AnimalShelter {
     companion object {
