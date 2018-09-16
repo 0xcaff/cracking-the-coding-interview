@@ -11,7 +11,7 @@ fun test() {
     val fifteen = BinaryTreeNode(15)
     val twelve = BinaryTreeNode(12, right = fifteen)
 
-    val ten = BinaryTreeNode(10, fifteen, twelve)
+    val ten = BinaryTreeNode(10, five, twelve)
 
     val twentyTwo = BinaryTreeNode(22)
 
