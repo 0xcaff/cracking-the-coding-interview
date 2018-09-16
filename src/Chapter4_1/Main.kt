@@ -35,6 +35,7 @@ fun breathFirstTraversal(
     val queue: Queue<GraphVertex> = LinkedList<GraphVertex>()
     val visited = HashSet<GraphVertex>()
 
+    visited.add(start)
     queue.add(start)
 
     while (!queue.isEmpty()) {
