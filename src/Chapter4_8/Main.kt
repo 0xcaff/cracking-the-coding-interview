@@ -40,13 +40,15 @@ fun findFirstCommonAncestor(
 ): BinaryTreeNode? {
     val isAOrB = { node: BinaryTreeNode -> node == a || node == b}
 
+    val rootHasAOrB = isAOrB(root)
+
     val left = root.left
     val leftHasAOrB = if (left != null) findPreOrder(left, isAOrB) else false
 
     val right = root.right
     val rightHasAOrB = if (right != null) findPreOrder(right, isAOrB) else false
 
-    if (leftHasAOrB && rightHasAOrB) {
+    if (twoOfThree(leftHasAOrB, rightHasAOrB, rootHasAOrB)) {
         return root
     }
 
@@ -60,6 +62,9 @@ fun findFirstCommonAncestor(
 
     return null
 }
+
+fun twoOfThree(a: Boolean, b: Boolean, c: Boolean): Boolean
+    = booleanArrayOf(a, b, c).filter { it }.size == 2
 
 fun findPreOrder(
         root: BinaryTreeNode,
