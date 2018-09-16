@@ -2,6 +2,7 @@ package Chapter4_2
 
 import Chapter4_4.Balanced
 import Chapter4_4.getBalancingForSubtree
+import Chapter4_5.isBinarySearchTree
 
 fun main(args: Array<String>) = test()
 
@@ -9,6 +10,7 @@ fun test() {
     val root = makeMinimalBinarySearchTree(intArrayOf(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15))
 
     require(getBalancingForSubtree(root) is Balanced)
+    require(isBinarySearchTree(root!!))
 }
 
 fun makeMinimalBinarySearchTree(values: IntArray): BinaryTreeNode? {
