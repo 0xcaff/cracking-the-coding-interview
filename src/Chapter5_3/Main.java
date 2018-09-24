@@ -1,10 +1,10 @@
 package Chapter5_3;
 
 public class Main {
-    // TODO: Test Failing
     public static void main(String[] args) {
         assert findLongestSequence(1775) == 8;
-        // assert findLongestSequence(-1) == Integer.BYTES * 8;
+        assert findLongestSequence(0) == 0;
+        assert findLongestSequence(-1) == Integer.BYTES * 8;
     }
 
     private static boolean getBit(int num, int i) {
@@ -16,7 +16,15 @@ public class Main {
         int lastSequenceLength = 0;
         int currentSequenceLength = 0;
 
-        for (int i = 1; i <= 32; i++) {
+        if (num == 0) {
+            return 0;
+        }
+
+        if (num == -1) {
+            return Integer.BYTES * 8;
+        }
+
+        for (int i = 0; i < 32; i++) {
             boolean bit = getBit(num, i);
 
             if (!bit) {
