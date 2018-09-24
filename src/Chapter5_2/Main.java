@@ -1,9 +1,8 @@
 package Chapter5_2;
 
 public class Main {
-    // TODO: Test Cases
     public static void main(String[] args) {
-        String actual = decimalToString(0.72);
+        assert decimalToString(0.6875).equals("1011");
     }
 
     private static String decimalToString(double dec) {
