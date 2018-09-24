@@ -9,7 +9,7 @@ public class Main {
         return (num & (1 << i)) != 0;
     }
 
-    public static int flipDistance(int a, int b) {
+    private static int flipDistance(int a, int b) {
         int distance = 0;
 
         for (int i = 1; i <= 32; i++) {
