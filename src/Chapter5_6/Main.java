@@ -3,6 +3,8 @@ package Chapter5_6;
 public class Main {
     public static void main(String []args) {
         assert flipDistance(29, 15) == 2;
+        assert flipDistance(29, 29) == 0;
+        assert flipDistance(-1, 0) == Integer.BYTES * 8;
     }
 
     private static boolean getBit(int num, int i) {
