@@ -12,13 +12,13 @@ public class Main {
         int x2ByteOffset = x2 / 8;
 
         int x1ByteStart = x1 % 8;
-        screen[heightOffset + x1ByteOffset] = (byte) (~(0xFF >> x1ByteStart));
+        screen[heightOffset + x1ByteOffset] |= (byte) (~(0xFF >> x1ByteStart));
 
         for (int i = heightOffset + x1ByteOffset + 1; i < heightOffset + x2ByteOffset; i++) {
             screen[i] = -1;
         }
 
         int x2ByteStart = x2 % 8;
-        screen[heightOffset + x2ByteOffset] = (byte) (0xFF >> x2ByteStart);
+        screen[heightOffset + x2ByteOffset] |= (byte) (0xFF >> x2ByteStart + 1);
     }
 }

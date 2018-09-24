@@ -10,6 +10,6 @@ public class Main {
         int evenMask = 0b10101010101010101010101010101010;
         int oddMask =  0b01010101010101010101010101010101;
 
-        return (num & evenMask) >> 1 | (num & oddMask) << 1;
+        return (num & evenMask) >>> 1 | (num & oddMask) << 1;
     }
 }
