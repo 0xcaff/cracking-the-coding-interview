@@ -1,0 +1,27 @@
+This can be solved with induction.
+
+Base Case:
+2 blue-eyed people.
+
+If both people are blue eyed, on the first day, they will each realize that
+the other has blue eyes, but they won't know anything about their eye color.
+
+If they both haven't left on the second day, it is because they don't know
+that they are blue-eyed. They would have left by now if they were sure that
+they were blue eyed. The only way for them to be sure they are blue-eyed,
+would be for the other person to be non-blue-eyed. Since they didn't leave
+and because at least one person is blue-eyed, both people are blue-eyed. For
+two people, it takes 2 days for all blue-eyed people to leave.
+
+Recursive Case:
+Assuming that for n blue-eyed people, it takes n days for everyone to realize
+and leave.
+
+Prove that it will take n + 1 days for n + 1 blue-eyed people to leave.
+After the n people have realized that they have blue eyes in n days, they
+will leave if you are non-blue eyed.
+
+If you are blue-eyed, they will stay for n + 1 days after which you can leave
+because you now know that you are blue-eyed.
+
+Therefore it will take n days where n is the number of blue-eyed people.

@@ -1,0 +1,3 @@
+Fill the five-quart jug. Pour it into the three-quart jug. Pour the remaining
+into output. Repeat. Profit.
+

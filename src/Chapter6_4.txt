@@ -1,0 +1,3 @@
+P(collision) = 1 - P(no collision)
+             = 1 - 2*0.5^n
+

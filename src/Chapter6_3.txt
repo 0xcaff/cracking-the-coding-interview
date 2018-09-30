@@ -1,0 +1,5 @@
+No cover is possible. The two diagonal opposite corners are the same color. A
+domino can only cover a white and a black square, never two white or two
+black squares. Assume there is a cover, the cover would cover 30 squares of
+one color and 32 of the other color. This means that a domino would be
+covering two squares of the same color. This is impossible.

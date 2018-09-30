@@ -1,0 +1,17 @@
+Split the 1k bottles into 10 sets of 100.
+
+Dip the test strips into each of the 100 bottles and submit for testing.
+
+After a week, you'll know which set of 100 bottles is bad.
+
+Split the 100 bottles into 9 sets. Dip the 9 remaining into each set.
+
+After a week, you'll have narrowed it down to 12 bottles.
+
+Repeat twice more.
+
+Once with two bottles in each set and finally once with one bottle in each set.
+
+It will take 4 weeks in the worst case.
+
+There is a better way apparently.

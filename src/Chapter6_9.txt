@@ -1,0 +1,14 @@
+Lockers with an even number of factors below 100 are closed. Lockers with an
+odd number of factors below 100 are open.
+
+8 is closed (1, 2, 4, 8)
+9 is open   (1, 3, 9)
+16 is open  (1, 2, 4, 8, 16)
+25 is open  (1, 5, 25)
+
+If the square root of a number is an integer, it is open.
+
+1^2, 2^2, 3^2, 4^2, ..., 10^2
+
+10 lockers are open
+

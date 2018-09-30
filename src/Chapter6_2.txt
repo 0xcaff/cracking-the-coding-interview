@@ -1,0 +1,15 @@
+Game 1: P(win) = P(shot)
+Game 2: P(win) = P(shot)^3 + P(shot)^2 (3 choose 2) (1 - P(shot))^1
+               = P(shot)^3 + 3 P(shot)^2 (1 - P(shot))
+
+x = x^3 + 3x^2 (1 - x)
+0 = x^3 + 3x^2 - 3x^3 - x
+0 = -2x^3 + 3x^2 - x
+0 = 2x^3 - 3x^2 + x
+0 = x(2x^2 - 3x + 1)
+
+x = 1/2
+
+If P(shot) < 1/2: Game 1
+   P(shot) = 1/2: Either
+   P(shot) > 1/2: Game 2

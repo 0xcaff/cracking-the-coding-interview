@@ -1,0 +1,9 @@
+Arrange the bottles from 1-20.
+
+From the first bottle, take 1 pill. From the second bottle, take 2 pills, etc.
+
+Put all the pills onto the scale.
+
+If all pills are the same weight, the scale will read 210 = (20)(20+1)/2.
+
+bottle # = (actual weight - 210 grams)/0.1 grams
