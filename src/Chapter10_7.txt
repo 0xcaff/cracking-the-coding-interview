@@ -1,0 +1,19 @@
+The question is ambiguous about the size of non-negative integers. If the
+integers are 32 bits long, there are around 4 billion of them, and whether they
+exist in a file can be stored in a bitmap. We have 8 billion bits available, so
+this works nicely.
+
+This can be done in 10MB (80 million bits) and two passes of the file. Create
+2^16 buckets (associated with each of the 2^16 bit prefixes). Each bucket has
+a 32 bit integer counter of the number of elements in the bucket. This costs
+about 2 million bits or 2MB. In the second pass, take the buckets with the
+fewest values and find the values not in the file.
+
+If the integers are more than 32 bits long (but fixed size), do the same as
+above, but ignore numbers outside the 32bit range. Because 4 billion is less
+than 2^32, there will always be some unused numbers in this range.
+
+Finally, if variable length integers are being considered, just generate a
+variable size integer which can't possibly fit in the file.
+
+https://stackoverflow.com/questions/7153659/find-an-integer-not-among-four-billion-given-ones
