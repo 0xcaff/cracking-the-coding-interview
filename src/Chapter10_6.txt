@@ -1,0 +1,9 @@
+Since the file is so large, we can't just read it into memory and process it
+immediately. Instead, we need to sort it part by part. This is a pretty common
+problem called External sorting.
+
+https://en.wikipedia.org/wiki/External_sorting
+
+One way to do this is with Merge Sort, splitting the file into something which
+fits into memory, sorting those pieces in memory, writing them to temp files.
+Then, doing a k-way merge between the pieces.
