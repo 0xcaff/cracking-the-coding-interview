@@ -1,0 +1,6 @@
+4KB = 32K bits
+
+Loop through the array toggling the bit corresponding the the number. If the
+bit is already 1 after being encountered but before toggling, a duplicate has
+been found.
+
