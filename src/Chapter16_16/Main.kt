@@ -4,6 +4,12 @@ fun main(args: Array<String>) {
     require(subsort(intArrayOf(1, 2, 4, 7, 10, 11, 7, 12, 6, 7, 16, 18, 19)) == Pair(3, 9))
     //                                  ----------------------
 
+    require(subsort(intArrayOf(1, 2, 4, 7, 10, 11, 7, 12, 6, 7)) == Pair(3, 9))
+    //                                  ----------------------
+
+    require(subsort(intArrayOf(7, 10, 11, 7, 12, 6, 7, 16, 18, 19)) == Pair(0, 6))
+    //                         ----------------------
+
     require(subsort(intArrayOf(10, 12, 20, 30, 25, 40, 32, 31, 35, 50)) == Pair(3, 8))
     //                                     ----------------------
 
