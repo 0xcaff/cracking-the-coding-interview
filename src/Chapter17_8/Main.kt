@@ -5,7 +5,7 @@
  * her. Given the heights and weights of each person in the circus, write a
  * method to compute the largest possible number of people in such a tower.
  */
-package Chapter17_9
+package Chapter17_8
 
 data class Person(val height: Int, val weight: Int) {
     fun canStandOn(other: Person): Boolean = height < other.height && weight < other.weight
