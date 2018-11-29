@@ -4,7 +4,7 @@
  * equally likely. Assume that you are given a random number generator which is
  * perfect.
  */
-package Chapter17_1
+package Chapter17_2
 
 import java.util.*
 
