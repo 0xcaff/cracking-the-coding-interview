@@ -94,19 +94,22 @@ fun findNextNode(current: BinaryTreeNode): BinaryTreeNode? {
     return getNextParent(current).parent
 }
 
-tailrec fun getLeftmost(node: BinaryTreeNode): BinaryTreeNode {
-    if (node.left != null) {
-        return getLeftmost(node.left)
+fun getLeftmost(startingNode: BinaryTreeNode): BinaryTreeNode {
+    var node = startingNode
+    while (node.left != null) {
+        node = node.left!!
     }
 
     return node
 }
 
-tailrec fun getNextParent(node: BinaryTreeNode): BinaryTreeNode {
-    val parent = node.parent
-    if (parent != null && node.isRightChild()) {
-        return getNextParent(parent)
+fun getNextParent(startingNode: BinaryTreeNode): BinaryTreeNode {
+    var node = startingNode
+
+    while (node.parent != null && node.isRightChild()) {
+        node = node.parent!!
     }
 
     return node
 }
+
