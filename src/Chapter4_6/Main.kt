@@ -1,6 +1,43 @@
 package Chapter4_6
 
-fun main(args: Array<String>) = test()
+fun main(args: Array<String>) {
+    test()
+    otherTest()
+}
+
+fun otherTest() {
+    val four = BinaryTreeNode(value = 4)
+    val seven = BinaryTreeNode(value = 7)
+    val six = BinaryTreeNode(
+            value = 6,
+            left = four,
+            right = seven
+    )
+
+    val ten = BinaryTreeNode(
+            value = 10,
+            right = BinaryTreeNode(
+                    value = 14,
+                    left = BinaryTreeNode(value = 13)
+            )
+    )
+
+
+    val bstRoot = BinaryTreeNode(
+            value = 8,
+            left = BinaryTreeNode(
+                    value = 3,
+                    left = BinaryTreeNode(value = 1),
+                    right = six
+            ),
+            right = ten
+    )
+
+    require(findNextNode(four) == six)
+    require(findNextNode(six) == seven)
+    require(findNextNode(seven) == bstRoot)
+    require(findNextNode(bstRoot) == ten)
+}
 
 fun test() {
     val one = BinaryTreeNode(1)
