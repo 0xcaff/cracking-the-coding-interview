@@ -22,10 +22,7 @@ val wordlist = arrayOf("tree", "used", "car", "bus", "test")
 
 val trie = run {
     val trie = TrieNode()
-    for (word in wordlist) {
-        trie.add(word)
-    }
-
+    trie.addAll(wordlist)
     trie
 }
 

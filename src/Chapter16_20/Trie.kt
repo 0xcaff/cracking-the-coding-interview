@@ -8,6 +8,9 @@ class TrieNode(
     var isTerminal: Boolean = false
         private set
 
+    val hasChildren: Boolean
+        get() = children.isNotEmpty()
+
     fun add(string: String) {
         if (string.isEmpty()) {
             isTerminal = true
@@ -19,7 +22,7 @@ class TrieNode(
 
     fun check(prefix: String): TrieLookupResult? {
         if (prefix.isEmpty()) {
-            return TrieLookupResult(isValue = isTerminal, isPrefix = children.isNotEmpty())
+            return TrieLookupResult(isValue = isTerminal, isPrefix = hasChildren)
         }
 
         val firstCharChild = getNextRoot(prefix[0]) ?: return null
@@ -28,6 +31,12 @@ class TrieNode(
 
     fun getNextRoot(char: Char): TrieNode? {
         return children[char]
+    }
+
+    fun addAll(array: Array<String>) {
+        for (el in array) {
+            add(el)
+        }
     }
 }
 
